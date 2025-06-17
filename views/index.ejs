@@ -29,13 +29,13 @@
       <div class="card today">
         <!-- <button type="button" method="post">What Moon day is today?</button> -->
         <h1><%= moonDayName %></h1>
-        <h2><%= moonDay %> Moon Day </h2>
+        <h2><%= moonDay %> Lunar Day</h2>
         <h3>started at <%= moonTime%></h3>
         <% const imagePath = `images/IMG_${moonDay}.jpg`%>
         <img class="day-image" src = <%=imagePath%> />
         <h3><%= daySummary %></h3>
         <p><strong>Важно в этот день: </strong> <%= todo %> </p>
-        <p><strong>Не стоит в этот день:</strong> <%= nottodo %></p>
+        <p><strong>Не стоит в этот день:</strong> <%= avoid %></p>
         <p><%= fullDescription %></p>
       </div>
 

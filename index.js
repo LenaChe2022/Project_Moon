@@ -11,7 +11,8 @@ const API_URL = "https://api.openweathermap.org/data/3.0/onecall?lat=47.674&lon=
 const yourAPIKey = apiKey;
 
 const mockData = JSON.parse(fs.readFileSync("mockData.json"));
-const dayDescription = JSON.parse(fs.readFileSync("day_description.json"));
+//const dayDescription = JSON.parse(fs.readFileSync("day_description.json"));
+const dayDescription = JSON.parse(fs.readFileSync("myDayText.json"));
 //console.log(dayDescription.nameRu[0]);
 
 //mock data for developing UI without API calls
@@ -59,7 +60,7 @@ app.get("/",async(req,res) => {
         const myDay = dayDescription;
 
     
-        res.render("index.ejs", {moonDay: moonDate, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], nottodo: myDay.nottodoRu[i], fullDescription: myDay.descriptionRu[i]});
+        res.render("index.ejs", {moonDay: moonDate, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]});
     } catch (error) {
         console.error("Failed to make request: ", error.message);
         res.status(500).send("Failed to get Moon Day. Please try again later.")
