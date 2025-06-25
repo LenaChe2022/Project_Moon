@@ -44,13 +44,13 @@ app.use(express.static("public"));
 app.get("/",async(req,res) => {
     try {
         const response = await axios.get(API_URL + yourAPIKey);
-        console.log(response.data);
+        //console.log(response.data);
 
         const moonFase = response.data.daily[0].moon_phase;
         const moonRise = response.data.daily[0].moonrise;
         const locationName = response.data.timezone;
         const moonriseTime = new Date(moonRise * 1000);
-        const localTimeMoonRise = moonriseTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: locationName });
+        const localTimeMoonRise = moonriseTime.toLocaleTimeString([], { hourCycle: 'h23', hour: '2-digit', minute: '2-digit', timeZone: locationName });
         const moonDate = Math.floor((moonFase * 29.53) +1);
 
         console.log(`Moon Day ${moonDate} started in ${ localTimeMoonRise} today`);

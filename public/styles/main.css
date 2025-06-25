@@ -84,3 +84,11 @@ p {
     border-radius: 5%;
     border: 4px solid var(--dark);
 }
+
+button {
+    margin: 5px;
+    border-radius: 20%;
+    border-color: var(--dark);
+    background-color: var(--neutral);
+    color: var(--dark);
+}
