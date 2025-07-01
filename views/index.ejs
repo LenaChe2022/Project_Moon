@@ -10,7 +10,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar-icons"> 
-                <a class="navbar-previous" href="#">
+                <a class="navbar-previous" href="/previous">
                     <img src="images/caret-left.svg" alt="caret-left" width="30" height="30" class="navbar-icon">
                 </a>
                 <a class="navbar-next" href="#">
@@ -34,7 +34,11 @@
       <div class="card today">
         <h1><%= moonDayName %></h1>
         <h2><%= moonDay %> Lunar Day</h2>
+        <% if (moonTime == 0) { %>
+        <h3></h3>   
+        <% } else {%>    
         <h3>started at <%= moonTime%></h3>
+        <% } %>
         <% const imagePath = `images/IMG_${moonDay}.jpg`%>
         <img class="day-image" src = <%=imagePath%> />
         <h3><%= daySummary %></h3>
