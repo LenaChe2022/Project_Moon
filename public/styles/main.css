@@ -52,6 +52,7 @@ p {
     color: var(--dark);
     text-align: justify;
     margin: 10px;
+    align-self: flex-start;
 }
 
 .navbar {
@@ -74,6 +75,11 @@ p {
 
 }
 
+.navbar-home {
+    text-decoration: none;
+
+}
+
 .navbar-calendar {
     
 }
@@ -91,4 +97,8 @@ button {
     border-color: var(--dark);
     background-color: var(--neutral);
     color: var(--dark);
+}
+
+a {
+    text-decoration: none;
 }
