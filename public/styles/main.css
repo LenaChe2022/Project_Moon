@@ -32,11 +32,13 @@ h3 {
 .flex-container {
     display: flex;
     gap: 10px;
+    justify-content: center;
 }
 
 .card {
-    width: 50%;
+    width: 60%;
     border: solid var(--light);
+    box-shadow: 12px 12px 2px 1px rgba(73, 54, 40, 0.2);
     border-radius: 5%;
     padding: 10px;
     margin: 10px;
@@ -58,6 +60,10 @@ p {
 .navbar {
     background-color: var(--medium);
     margin: 0;
+}
+
+.navbar-home {
+    border: solid var(--dark);
 }
 
 .container {
