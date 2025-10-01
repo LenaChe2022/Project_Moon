@@ -35,10 +35,20 @@ app.get("/", (req, res) => {
     const i = moonDate - 1;
     const atTime = localTimeMoonRise;
     const myDay = dayDescription;
+    const wichDay = "Today:";
 
-    res.render("index.ejs", {moonDay: moonDate, homeNav: 1, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]});
+    res.render("index.ejs", {dayActual: wichDay, moonDay: moonDate, homeNav: 1, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]});
 });
 
+app.get("/Ru", (req, res) => {
+    const moonDate = moonDay;
+    const i = moonDate - 1;
+    const atTime = localTimeMoonRise;
+    const myDay = dayDescription;
+    const wichDay = "Сегодня:";
+
+    res.render("index_ru.ejs", {dayActual: wichDay, moonDay: moonDate, homeNav: 1, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]});
+});
 
 //Previous day using mock data:
 app.get("/previous", (req,res) => {
@@ -54,9 +64,31 @@ app.get("/previous", (req,res) => {
     const myDay = dayDescription;
     const atTime = 0;
 
+    const wichDay = "Previous Moon Day: ";
+
   console.log("yesterday was " + moonDate + " moon Day" );
 
-  res.render("index.ejs", {moonDay: moonDate, homeNav: 0, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]})
+  res.render("index.ejs", {dayActual: wichDay, moonDay: moonDate, homeNav: 0, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]})
+});
+
+app.get("/previousRu", (req,res) => {
+    var moonDate = 0;
+    var i = 0;
+    if (moonDay > 1) {
+       moonDate = moonDay - 1;
+       i = moonDay - 2;
+    } else {
+        moonDate = 29;
+        i = 28;
+    }
+    const myDay = dayDescription;
+    const atTime = 0;
+
+    const wichDay = "Предыдущий Лунный день:";
+
+  console.log("yesterday was " + moonDate + " moon Day" );
+
+  res.render("index_ru.ejs", {dayActual: wichDay, moonDay: moonDate, homeNav: 0, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]})
 });
 
 //Next day using mock data:
@@ -76,8 +108,31 @@ app.get("/next", (req, res) => {
     const i = moonDay - 1;
     const atTime = localTimeMoonRise;
     const myDay = dayDescription;
+    const wichDay = "Next Moon Day:";
 
-    res.render("index.ejs", {moonDay: moonDate, homeNav: 0, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]})
+    res.render("index.ejs", {dayActual: wichDay, moonDay: moonDate, homeNav: 0, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]})
+
+});
+
+app.get("/nextRu", (req, res) => {
+    const moonFase = mockData.daily[1].moon_phase;
+    const moonRise = mockData.daily[1].moonrise;
+    const locationName = mockData.timezone;
+
+    const moonriseTime = new Date(moonRise * 1000);
+    const localTimeMoonRise = moonriseTime.toLocaleTimeString([], { hourCycle: 'h23', hour: '2-digit', minute: '2-digit', timeZone: locationName });
+
+    const moonDay = Math.floor((moonFase * 29.53) +1);
+
+    console.log(`Next Moon Day ${moonDay} will start in ${ localTimeMoonRise} tomorrow`);
+
+    const moonDate = moonDay;
+    const i = moonDay - 1;
+    const atTime = localTimeMoonRise;
+    const myDay = dayDescription;
+    const wichDay = "Следующий Лунный День:";
+
+    res.render("index_ru.ejs", {dayActual: wichDay, moonDay: moonDate, homeNav: 0, moonTime: atTime, moonDayName: myDay.nameRu[i], daySummary: myDay.summaryRu[i], todo: myDay.todoRu[i], avoid: myDay.avoidRu[i], fullDescription: myDay.descriptionRu[i]})
 
 });
 

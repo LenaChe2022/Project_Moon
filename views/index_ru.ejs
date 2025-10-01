@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moon Day</title>
+    <title>🌘 Лунный день</title>
     <link rel="stylesheet" href="/styles/main.css"/>
     <style>
         .background-image {
@@ -24,16 +24,16 @@
         <div class="container">
             <% if (homeNav == 0) { %>
             <div class="navbar-icons">
-                <a class="navbar-home" href="/">
+                <a class="navbar-home" href="/Ru">
                     <!-- <p><strong>Home</strong></p></a>   -->
-                    <p>Home</p></a>   
+                    <p>Домой</p></a>   
             </div>
             <% } else { %>    
             <div class="navbar-icons"> 
-                <a class="navbar-previous" href="/previous">
+                <a class="navbar-previous" href="/previousRu">
                     <img src="images/arrow-left.svg" alt="caret-left" width="30" height="30" class="navbar-icon">
                 </a>
-                <a class="navbar-next" href="/next">
+                <a class="navbar-next" href="/nextRu">
                     <img src="images/arrow-right.svg" alt="caret-right" width="30" height="30" class="navbar-icon">
                 </a>
             </div>
@@ -58,11 +58,11 @@
        <div class="card today">
         <h2><%= dayActual %></h2>
         <h1><%= moonDayName %></h1>
-        <h2><%= moonDay %> Lunar Day</h2>
+        <h2><%= moonDay %> Лунный день</h2>
         <% if (moonTime == 0) { %>
         <h3></h3>   
         <% } else {%>    
-        <h3>start at <%= moonTime%></h3>
+        <h3>начало в <%= moonTime%></h3>
         <% } %>
         <img class="day-image" src = <%=imagePath%> />
         <h3><%= daySummary %></h3>
