@@ -152,12 +152,34 @@ footer>.container {
 
 .navbar-home>p{
     line-height: normal;
-    margin: 5px 0px;
+    margin: 5px 10px;
+    font-size: 1.5rem;
 }
 
+.navbar-home>p:hover {
+    color: var(--dark);
+}
 
-.navbar-icon {
-    fill: var(--light);
+/* change the icon color in the fill style inside SVG file */
+/* .navbar-icon {
+    fill: var(--dark);
+} */
+
+
+
+/* trying to make inline laguages links*/
+.flex-container {
+    display: flex;
+}
+
+.languages {
+    flex-direction:row;
+    background-color: red;
+    height: 100%;
+}
+
+.languages p {
+    height: 20px;
 }
 
 .day-image {
@@ -174,12 +196,31 @@ footer>.container {
 
 button {
     margin: 10px;
-    border-radius: 20%;
+    padding: 5px;
+    border-radius: 10px;
+    background-image: linear-gradient(
+    to top left,
+    rgb(0 0 0 / 0.2),
+    rgb(0 0 0 / 0.2) 30%,
+    transparent
+    );
     border-color: var(--light);
     background-color: var(--neutral);
     color: var(--dark);
     font-size: medium;
     font-weight:600;
+}
+
+button:active {
+    box-shadow:
+      inset -2px -2px 3px rgb(255 255 255 / 0.6),
+      inset 2px 2px 3px rgb(0 0 0 / 0.6);
+}
+
+button:hover {
+    background-color: var(--dark);
+    color: var(--light);
+    cursor: pointer;
 }
 
 /* img .navbar-icon {
