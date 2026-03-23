@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moon Day</title>
+    <title>🌘 Moon Day</title>
     <link rel="stylesheet" href="/styles/main.css"/>
     <style>
         .background-image {
@@ -66,8 +66,8 @@
         <% } %>
         <img class="day-image" src = <%=imagePath%> />
         <h3><%= daySummary %></h3>
-        <p><strong>Важно в этот день: </strong> <%= todo %> </p>
-        <p><strong>Не стоит в этот день:</strong> <%= avoid %></p>
+        <p><strong>Do: </strong> <%= todo %> </p>
+        <p><strong>Avoid:</strong> <%= avoid %></p>
         <p><%= fullDescription %></p>
        </div>
       
@@ -80,7 +80,7 @@
     <footer class="footer">
         <div class="container">
             <p>LenaChe</p>
-            <p>2025</p>
+            <p><%= new Date().getFullYear() %></p>
         </div>
         
     </footer>
