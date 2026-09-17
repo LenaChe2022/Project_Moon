@@ -4,9 +4,6 @@
 
 A web application that displays the current moon phase and provides personalized astrological advice based on the lunar cycle.
 
-https://img.shields.io/badge/demo-live-brightgreen
-https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
-https://img.shields.io/badge/License-ODbL-blue.svg
 
 ## 📖 Table of Contents
 
@@ -147,7 +144,9 @@ This project is licensed under the Creative Commons Attribution-ShareAlike 4.0 I
 
 Project code: [Add your chosen license, e.g., MIT]
 
-Weather data: ![CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) & ![ODbL](https://opendatacommons.org/licenses/odbl/) 
+Weather data: ![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)(https://creativecommons.org/licenses/by-sa/4.0/) & ![ODbL](https://img.shields.io/badge/License-ODbL-blue.svg)(https://opendatacommons.org/licenses/odbl/) 
+
+(https://img.shields.io/badge/demo-live-brightgreen)
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   (https://opensource.org/licenses/MIT)
